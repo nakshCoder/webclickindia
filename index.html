@@ -18,7 +18,16 @@
           transform: scaleX(1);
         }
         100% {
-          transform: scaleX(1.2);
+          transform: scaleX(1.15);
+        }
+      }
+
+      @keyframes animated-navbar {
+        0% {
+          transform: scaleY(0);
+        }
+        100% {
+          transform: scaleY(100);
         }
       }
 
@@ -26,13 +35,8 @@
         animation: paraZoom 0.8s ease-in-out alternate infinite;
       }
 
-      .snowflake {
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        background: linear-gradient(white, white);
-        border-radius: 50%;
-        filter: drop-shadow(0 0 10px white);
+      .animated-navbar {
+        animation: navbar-animation 0.8s ease-in-out alternate;
       }
 
       .my-work {
@@ -46,7 +50,7 @@
         );
       }
     </style>
-    <link rel="stylesheet" href="assets/index-dc7071ed.css" />
+    <link rel="stylesheet" href="assets/index-768f61da.css" />
   </head>
   <body>
     <div class="overflow-x-hidden overflow-y-auto h-[100vh] w-[100vw]">
@@ -58,7 +62,7 @@
             class="w-[60px] h-[60px]"
           />
           <nav>
-            <ul class="flex gap-x-10">
+            <ul class="hidden lg:flex gap-x-10">
               <li class="hover:text-darkPurple duration-200">
                 <a href="">About Us</a>
               </li>
@@ -75,16 +79,37 @@
           </nav>
           <button
             type="submit"
-            class="px-8 py-2 bg-darkPurple text-white hover:text-white hover:bg-[#423766] duration-200 rounded-md"
+            class="hidden lg:block px-8 py-2 bg-darkPurple text-white hover:text-white hover:bg-[#423766] duration-200 rounded-md"
           >
-            Get Exact Quotation
+            <a href="enquiry.html"> Get Exact Quotation </a>
           </button>
+          <div
+            class="flex flex-col gap-1 lg:hidden cursor-pointer navbar-hidden"
+          >
+            <div class="w-[23px] h-[2px] bg-black"></div>
+            <div class="w-[23px] h-[2px] bg-black"></div>
+            <div class="w-[23px] h-[2px] bg-black"></div>
+          </div>
         </div>
-      </header>
-      <section class="w-full">
-        <div
-          class="flex flex-col justify-center items-center w-[100%] h-[100vh]"
+        <ul
+          class="navbar-item-hidden flex flex-col items-end mr-7 gap-4 navbar-animation"
         >
+          <li class="hover:text-darkPurple duration-200">
+            <a href="">About Us</a>
+          </li>
+          <li class="hover:text-darkPurple duration-200">
+            <a href="">Pricing</a>
+          </li>
+          <li class="hover:text-darkPurple duration-200">
+            <a href="">Contact Us</a>
+          </li>
+          <li class="hover:text-darkPurple duration-200">
+            <a href="">Blogs</a>
+          </li>
+        </ul>
+      </header>
+      <section class="w-full h-auto py-10 lg:h-[100vh]">
+        <div class="flex flex-col justify-center items-center w-[100%]">
           <div class="flex flex-col gap-5 justify-center text-center">
             <h1 class="text-3xl lg:text-5xl">
               Best website design company in
@@ -419,6 +444,8 @@
         </div>
       </footer>
     </div>
+
+    <script src="script.js"></script>
 
     <script
       src="https://kit.fontawesome.com/f50fdb34c0.js"
